@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+video {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+   
+  }
+  
