@@ -1,7 +1,8 @@
 import React from 'react';
 import { FaGraduationCap } from 'react-icons/fa';
-
+import { useNavigate } from "react-router-dom";
 function Departments() {
+    const navigate = useNavigate()
     const departmentData = [
         {
             name: "Computer Science",
@@ -67,6 +68,7 @@ function Departments() {
                 {departmentData.map((department, index) => (
                     <div
                         key={index}
+                        onClick={() => navigate(`/${department.name.replace(/\s+/g, '')}`)}
                         className="max-w-sm rounded overflow-hidden shadow-lg mx-4 my-4 cursor-pointer w-[300px]"
                     >
                         <img
