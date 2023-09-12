@@ -7,6 +7,24 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import ComputerScience from './Pages/Departments/ComputerScience';
 import SoftwareEngineering from './Pages/Departments/SoftwareEngineering';
 import HND from './Pages/Departments/HND';
+import InformationTechnology from './Pages/Departments/InfoTech';
+import FoodScience from './Pages/Departments/FoodScience';
+import BBA from './Pages/Departments/BBA';
+import Accounting from './Pages/Departments/Accounting';
+import Math from './Pages/Departments/Math';
+import Physics from './Pages/Departments/Physics';
+import Chemistry from './Pages/Departments/Chemistry';
+import Contact from './Pages/Contact';
+import Timetable from './Pages/Academics/Timetable';
+import Datesheet from './Pages/Academics/Datesheet';
+import Calender from './Pages/Academics/AcademicCalender';
+import Prospectus from './Pages/Academics/Prospectus';
+import MeritList from './Pages/Academics/MeritList';
+import RoadMaps from './Pages/Academics/RoadMaps';
+import AdmissionOffice from './Pages/Administration/AdmissionOffice';
+import ControllerExamination from './Pages/Administration/ControllerExamination';
+import Registrar from './Pages/Administration/Registrar';
+import VCOffice from './Pages/Administration/VCOffice';
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -35,8 +53,25 @@ export default function Home() {
             <Route path="/ComputerScience" element={<ComputerScience />} />
             <Route path="/SoftwareEngineering" element={<SoftwareEngineering />} />
             <Route path="/HumanNutrition&Dietetics" element={<HND />} />
-            <Route path="/SoftwareEngineering" element={<SoftwareEngineering />} />
-            <Route path="/SoftwareEngineering" element={<SoftwareEngineering />} />
+            <Route path="/InformationTechnology" element={<InformationTechnology />} />
+            <Route path="/FoodScience" element={<FoodScience />} />
+            <Route path="/BachelorofBusinessAdministration(BBA)" element={<BBA />} />
+            <Route path="/Accounting&Finance" element={<Accounting />} />
+            <Route path="/Mathematics" element={<Math />} />
+            <Route path="/Physics" element={<Physics />} />
+            <Route path="/Chemistry" element={<Chemistry />} />
+            <Route path="/Contact" element={<Contact />} />
+            <Route path="/TimeTable" element={<Timetable/>} />
+            <Route path="/DateSheet" element={<Datesheet/>} />
+            <Route path="/AcademicCalender" element={<Calender/>} />
+            <Route path="/Prospectus" element={<Prospectus/>} />
+            <Route path="/MeritLists" element={<MeritList/>} />
+            <Route path="/RoadMaps" element={<RoadMaps/>} />
+            <Route path="/AdmissionOffice" element={<AdmissionOffice/>} />
+            <Route path="/ControllerExamination" element={<ControllerExamination/>} />
+            <Route path="/Registrar" element={<Registrar/>} />
+            <Route path="/VCOffice" element={<VCOffice/>} />
+            
           </Routes>
         </Router>
       )}

@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaPhone, FaEnvelope, FaLocationArrow } from 'r
 
 function Footer() {
   return (
-    <div>
+    <div className='contact'>
       <footer className="bg-[#244989] text-white py-8">
         <div className="container mx-auto flex flex-col p-4 md:flex-row justify-between gap-10">
           {/* Column 1 - About Us */}
@@ -23,11 +23,12 @@ function Footer() {
           <div className="mb-6 md:mb-0">
             <h3 className="text-xl font-semibold mb-2 border-b-2">Our Links</h3>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Services</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="Departments">Departments</a></li>
+              <li><a href="#">Administration</a></li>
+              <li><a href="#">Academics</a></li>
+              <li><a href="#">Contact</a></li>
+             
               {/* Add more links here */}
             </ul>
           </div>
@@ -52,7 +53,7 @@ function Footer() {
       </footer>
 
       {/* Copyright */}
-      <div className="text-center">
+      <div className="text-center bg-white">
         <p>Copyright © 2023. All rights reserved.</p>
         <div className="flex items-center justify-center">
           <a href="https://www.instagram.com/awais144506/" className="flex items-center text-[#4E7AC8] font-semibold">

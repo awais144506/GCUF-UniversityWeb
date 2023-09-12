@@ -37,84 +37,84 @@ const schemeOfStudies = [
 const feeStructure = [
     {
         semester: 1,
-        admissionFee: 1000,
-        registrationFee: 500,
-        tuitionFee: 2000,
-        examinationFee: 300,
-        librarySecurity: 100,
-        otherDues: 200,
-        totalFee: 4100,
+        admissionFee: 1500,
+        registrationFee: 1500,
+        tuitionFee: 22800,
+        examinationFee: 2200,
+        librarySecurity: 2300,
+        otherDues: 10500,
+        totalFee: 40800,
         degreeFee: "308,160"
     },
     {
         semester: 2,
-        admissionFee: 1000,
-        registrationFee: 500,
-        tuitionFee: 2000,
-        examinationFee: 300,
-        librarySecurity: 100,
-        otherDues: 200,
-        totalFee: 4100,
+        admissionFee: "-",
+        registrationFee: "-",
+        librarySecurity: "-",
+        tuitionFee: 24460,
+        examinationFee: 2200,
+        otherDues: 10500,
+        totalFee: 37160,
     },
     {
-        semester: 2,
-        admissionFee: 1000,
-        registrationFee: 500,
-        tuitionFee: 2000,
-        examinationFee: 300,
-        librarySecurity: 100,
-        otherDues: 200,
-        totalFee: 4100,
+        semester: 3,
+        admissionFee: "-",
+        registrationFee: "-",
+        librarySecurity: "-",
+        tuitionFee: 24800,
+        examinationFee: 2300,
+        otherDues: 10500,
+        totalFee: 37600,
     },
     {
-        semester: 2,
-        admissionFee: 1000,
-        registrationFee: 500,
-        tuitionFee: 2000,
-        examinationFee: 300,
-        librarySecurity: 100,
-        otherDues: 200,
-        totalFee: 4100,
+        semester: 4,
+        admissionFee: "-",
+        registrationFee: "-",
+        librarySecurity: "-",
+        tuitionFee: 24800,
+        examinationFee: 2300,
+        otherDues: 10500,
+        totalFee: 37160,
     },
     {
-        semester: 2,
-        admissionFee: 1000,
-        registrationFee: 500,
-        tuitionFee: 2000,
-        examinationFee: 300,
-        librarySecurity: 100,
-        otherDues: 200,
-        totalFee: 4100,
+        semester: 5,
+        admissionFee: "-",
+        registrationFee: "-",
+        librarySecurity: "-",
+        tuitionFee: 25800,
+        examinationFee: 2400,
+        otherDues: 10500,
+        totalFee: 38700,
     },
     {
-        semester: 2,
-        admissionFee: 1000,
-        registrationFee: 500,
-        tuitionFee: 2000,
-        examinationFee: 300,
-        librarySecurity: 100,
-        otherDues: 200,
-        totalFee: 4100,
+        semester: 6,
+        admissionFee: "-",
+        registrationFee: "-",
+        librarySecurity: "-",
+        tuitionFee: 25800,
+        examinationFee: 2400,
+        otherDues: 10500,
+        totalFee: 38700,
     },
     {
-        semester: 2,
-        admissionFee: 1000,
-        registrationFee: 500,
-        tuitionFee: 2000,
-        examinationFee: 300,
-        librarySecurity: 100,
-        otherDues: 200,
-        totalFee: 4100,
+        semester: 7,
+        admissionFee: "-",
+        registrationFee: "-",
+        librarySecurity: "-",
+        tuitionFee: 25800,
+        examinationFee: 2500,
+        otherDues: 10500,
+        totalFee: 38800,
     },
     {
-        semester: 2,
-        admissionFee: 1000,
-        registrationFee: 500,
-        tuitionFee: 2000,
-        examinationFee: 300,
-        librarySecurity: 100,
-        otherDues: 200,
-        totalFee: 4100,
+        semester: 8,
+        admissionFee: "-",
+        registrationFee: "-",
+        librarySecurity: "-",
+        tuitionFee: 25800,
+        examinationFee: 2500,
+        otherDues: 10500,
+        totalFee: 38800,
     },
 ];
 const facultyData = [
@@ -158,7 +158,7 @@ const facultyData = [
 
 function ComputerScience() {
     return (
-        <div>
+        <div >
             <NavbarDirectories />
 
             <div className="container mx-auto my-8 p-8 bg-gray-100 rounded-lg">
@@ -238,9 +238,9 @@ function ComputerScience() {
                                 <th className="border border-gray-300 p-2 ">Semester No</th>
                                 <th className="border border-gray-300 p-2">Admission Fee</th>
                                 <th className="border border-gray-300 p-2">Registration Fee</th>
+                                <th className="border border-gray-300 p-2">Library Security</th>
                                 <th className="border border-gray-300 p-2">Tuition Fee</th>
                                 <th className="border border-gray-300 p-2">Examination Fee</th>
-                                <th className="border border-gray-300 p-2">Library Security</th>
                                 <th className="border border-gray-300 p-2">Other Dues</th>
                                 <th className="border border-gray-300 p-2">Total Fee</th>
 
@@ -252,9 +252,9 @@ function ComputerScience() {
                                     <td className="border border-gray-300 p-2 text-center">{fee.semester}</td>
                                     <td className="border border-gray-300 p-2 text-center">{fee.admissionFee}</td>
                                     <td className="border border-gray-300 p-2 text-center">{fee.registrationFee}</td>
+                                    <td className="border border-gray-300 p-2 text-center">{fee.librarySecurity}</td>
                                     <td className="border border-gray-300 p-2 text-center">{fee.tuitionFee}</td>
                                     <td className="border border-gray-300 p-2 text-center">{fee.examinationFee}</td>
-                                    <td className="border border-gray-300 p-2 text-center">{fee.librarySecurity}</td>
                                     <td className="border border-gray-300 p-2 text-center">{fee.otherDues}</td>
                                     <td className="border border-gray-300 p-2 text-center">{fee.totalFee}</td>
 
@@ -269,8 +269,19 @@ function ComputerScience() {
                         </tbody>
                     </table>
                 </div>
+                <div>
+                    <h3 className="text-xl font-bold mb-4 mt-8">Fee Structure Note:</h3>
+                    <ul className='border border-gray-300 p-4'>
+                        <li>Evening/Replica program tution Fee Rs. 10000/- in addition per semester.</li>
+                        <li>Thesis Fee @ Rs. 3000/- will be charged in final semester in addition to above.</li>
+                        <li>Project Fee @ Rs. 1500/- will be charged at the time of Project submission.</li>
+                        <li>Degree Verification on Fee @ Rs. 1500/- will be charged in 3rd semester in addition to above.</li>
+                        <li>Degree Fee @ Rs. 2500/- will be charged in fi nal semester in addition to above.</li>
+                    </ul>
+                </div>
 
                 {/* Faculy Section */}
+                <h1 className='text-center text-3xl font-bold mb-10 mt-10'>Computer Science Faculty</h1>
                 <div className="flex flex-wrap justify-center mt-8">
                     {facultyData.map((faculty, index) => (
                         <div
