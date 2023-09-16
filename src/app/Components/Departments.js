@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { FaGraduationCap } from 'react-icons/fa';
 import { useNavigate } from "react-router-dom";
 function Departments() {
@@ -71,10 +72,12 @@ function Departments() {
                         onClick={() => navigate(`/${department.name.replace(/\s+/g, '')}`)}
                         className="max-w-sm rounded overflow-hidden shadow-lg mx-4 my-4 cursor-pointer w-[300px]"
                     >
-                        <img
+                        <Image
                             className="w-full h-40 object-cover hover:scale-110 hover:transation hover:ease-in-out duration-300"
                             src={department.image}
                             alt={department.name}
+                            width="300"
+                            height={40}
                         />
                         
                         <div className="px-6 py-4">
