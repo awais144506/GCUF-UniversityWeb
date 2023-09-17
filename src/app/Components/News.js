@@ -1,14 +1,31 @@
-import React from 'react';
+
 import { FaGraduationCap } from 'react-icons/fa';
 import { useNavigate } from "react-router-dom";
 import { NewsData } from '../Pages/AllNews';
+import { db } from "../../../appwrite";
+import { useEffect, useState } from 'react';
 function News() {
   const navigate = useNavigate()
-  const firstThreeNews = NewsData.slice(0,4)
+ 
   const handleClick = (e) => {
     e.preventDefault()
     navigate("/AllNews");
   };
+  const [documents, setDocuments] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await db.listDocuments("6506cf5aa359dba589cb","6506d0011351ee9de1ef");
+        setDocuments(response.documents);
+        
+      } catch (error) {
+        console.error('Error fetching documents:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className="container mx-auto mb-40 mt-40">
@@ -18,13 +35,16 @@ function News() {
       </h3>
       <h2 className="text-3xl font-bold mb-4 text-center">News & Notices</h2>
       <div className="flex flex-wrap justify-center mt-10  space-y-4 space-x-4 md:space-y-0 p-4">
-        {firstThreeNews.map((news, index) => (
+      {documents.slice(0, 4).reverse().map((news,index) => (
           <div
             key={index}
             className="group w-full md:w-72 bg-white p-4 rounded-lg shadow-md cursor-pointer hover:bg-blue-500 hover:text-white"
           >
+            <p className="text-gray-700 mb-2 font-semibold group-hover:text-white">
+              {news.date}
+            </p>
             <h2 className="text-xl font-bold mb-4">{news.heading}</h2>
-            <p className="text-gray-700 mb-6 group-hover:text-white">
+            <p className="text-gray-700 mb-6 text-justify group-hover:text-white">
               {news.description}
             </p>
             <button className="bg-blue-500 text-white px-4 py-2 rounded-full">
