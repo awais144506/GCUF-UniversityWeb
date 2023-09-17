@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint"
   },
- 
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "@react-navigation/native": "^6.1.7",
     "appwrite": "^13.0.0",
