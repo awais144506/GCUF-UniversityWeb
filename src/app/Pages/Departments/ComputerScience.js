@@ -1,35 +1,76 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import NavbarDirectories from '@/app/Components/NavbarDirectories';
 import Footer from '@/app/Components/Footer';
 import { FaEnvelope } from 'react-icons/fa';
-
+import { db,storage } from '../../../../appwrite';
 const schemeOfStudies = [
     {
         semester: 'Semester 1',
-        subject1: "Object-Oriented Programming",
-        subject2: "Object-Oriented Programming",
-        subject3: "Object-Oriented Programming",
-        subject4: "Object-Oriented Programming",
-        subject5: "Object-Oriented Programming",
-        subject6: "Object-Oriented Programming",
+        subject1: "Introduction to Computing Applications",
+        subject2: "Calculus & Analytical Geometry ",
+        subject3: "Financial Accounting ",
+        subject4: "English Composition & Comprehension",
+        subject5: "Pakistan Studies",
+        subject6: "Islamic Studies/Ethics",
     },
     {
-        semester: 'Semester 1',
-        subject1: "Object-Oriented Programming",
-        subject2: "Object-Oriented Programming",
-        subject3: "Object-Oriented Programming",
-        subject4: "Object-Oriented Programming",
-        subject5: "Object-Oriented Programming",
-        subject6: "Object-Oriented Programming",
+        semester: 'Semester 2',
+        subject1: "Programming Fundamentals",
+        subject2: "Digital Logic Design",
+        subject3: "Multi-variate Calculus",
+        subject4: "Discrete Structures",
+        subject5: "Introduction to Pakistani Economy",
+        subject6: "Technical Writing",
     },
     {
-        semester: 'Semester 1',
-        subject1: "Object-Oriented Programming",
-        subject2: "Object-Oriented Programming",
-        subject3: "Object-Oriented Programming",
-        subject4: "Object-Oriented Programming",
-        subject5: "Object-Oriented Programming",
-        subject6: "Object-Oriented Programming",
+        semester: 'Semester 3',
+        subject1: "Data Structure and Algorithms",
+        subject2: "Object Oriented Programming",
+        subject3: "Computer Networks",
+        subject4: "Differential Equations",
+        subject5: "Basic Electronics",
+        subject6: "Introduction to Statistical Theory",
+    },
+    {
+        semester: 'Semester 4',
+        subject1: "Computer Organization and Assembly Language",
+        subject2: "Database Systems",
+        subject3: "Introduction to Software Engineering",
+        subject4: "Wireless Communication",
+        subject5: "Numerical Computing",
+ 
+    },
+    {
+        semester: 'Semester 5',
+        subject1: "Theory of Automata",
+        subject2: "Professional Practices",
+        subject3: "Operating Systems ",
+        subject4: "Communication Skills",
+        subject5: "Linear Algebra",
+    
+    },
+    {
+        semester: 'Semester 6',
+        subject1: "Artificial Intelligence",
+        subject2: "Design and Analysis of Algorithms",
+        subject3: "Web Design and Development",
+        subject4: "Fundamental of Data Mining",
+        subject5: "Distributed Database Systems",
+    },
+    {
+        semester: 'Semester 7',
+        subject1: "Mobile & Application Development",
+        subject2: "Computer Graphics",
+        subject3: "Introduction to Sociology",
+        subject4: "Parallel & Distributed Computing",
+        subject5: "Compiler Construction",
+    },
+    {
+        semester: 'Semester 8',
+        subject1: "Information Security",
+        subject2: "Foreign Language (Chinese, French,English,German,Arabic,Persian)",
+        subject3: "Final Year Project",
+    
     },
 
 ];
@@ -117,46 +158,37 @@ const feeStructure = [
         totalFee: 53900,
     },
 ];
-const facultyData = [
-    {
-        name: "Fahad Farhan",
-        qualification: "MS (Computer Science)",
-        special: "Artificial Intelligence",
-        mail: "fahad@gcufswl.com",
-        image: "Vc.jpg"
-    },
-    {
-        name: "Fahad Farhan",
-        qualification: "MS (Computer Science)",
-        special: "Artificial Intelligence",
-        mail: "fahad@gcufswl.com",
-        image: "Vc.jpg"
-    },
-    {
-        name: "Fahad Farhan",
-        qualification: "MS (Computer Science)",
-        special: "Artificial Intelligence",
-        mail: "fahad@gcufswl.com",
-        image: "Vc.jpg"
-    },
-    {
-        name: "Fahad Farhan",
-        qualification: "MS (Computer Science)",
-        special: "Artificial Intelligence",
-        mail: "fahad@gcufswl.com",
-        image: "Vc.jpg"
-    },
-    {
-        name: "Fahad Farhan",
-        qualification: "MS (Computer Science)",
-        special: "Artificial Intelligence",
-        mail: "fahad@gcufswl.com",
-        image: "Vc.jpg"
-    },
-
-]
 
 function ComputerScience() {
+
+    const [faculty,setFaculty] = useState([])
+    console.log("This is The local Fetching",faculty)
+
+    useEffect(() => {
+        const fetchDataAndPreviews = async () => {
+          try {
+          
+            const documentResponse = await db.listDocuments("650c46ce8f031e26fd6d", "650c46e2e1a1bcd7c852");
+            console.log(documentResponse)
+            const previewPromises = documentResponse.documents.map(async document => {
+              const documentId = document["$id"];
+              const preview = await storage.getFilePreview("6506e1c443a66bc104ce", documentId);
+              return { document, preview }; 
+            });
+    
+            const previews = await Promise.all(previewPromises);
+            const validPreviews = previews.filter(pair => pair.preview !== null);
+    
+            setFaculty(validPreviews); 
+          } catch (error) {
+            console.error('Error:', error);
+          }
+        };
+    
+        fetchDataAndPreviews();
+      }, []);
+
+    
     return (
         <div >
             <NavbarDirectories />
@@ -283,28 +315,28 @@ function ComputerScience() {
                 {/* Faculy Section */}
                 <h1 className='text-center text-3xl font-bold mb-10 mt-10'>Computer Science Faculty</h1>
                 <div className="flex flex-wrap justify-center mt-8">
-                    {facultyData.map((faculty, index) => (
+                    {faculty.map((pair, index) => (
                         <div
                             key={index}
                             className="max-w-sm rounded overflow-hidden shadow-lg mx-4 my-4 cursor-pointer w-[300px]"
                         >
                             <img
                                 className="w-full h-60 object-cover hover:scale-110 hover:transition hover:ease-in-out duration-300"
-                                src={faculty.image}
-                                alt={faculty.name}
+                                src={pair.preview}
+                                alt={pair.name}
                             />
                             <div className="px-6 py-4">
-                                <div className="font-bold text-xl mb-2">{faculty.name}</div>
-                                <p className='font-semibold font-extralarge mb-2'>Lecturer</p>
+                                <div className="font-bold text-xl mb-2">{pair.document.name}</div>
+                                <p className='font-semibold font-extralarge mb-2'>{pair.document.designation}</p>
                                 <p className="text-gray-700 text-base mb-2 w-[200px]">
-                                    <span className='font-semibold text-left'> Qualification:</span> <br /> {faculty.qualification}
+                                    <span className='font-semibold text-left'> Qualification:</span> <br /> {pair.document.qualification}
                                 </p>
                                 <p className="text-gray-700 text-base mb-2 w-[200px]">
-                                    <span className='font-semibold text-left'> Specialization:</span> <br /> {faculty.special}
+                                    <span className='font-semibold text-left'> Specialization:</span> <br /> {pair.document.specialization}
                                 </p>
                                 <div className="flex items-center">
                                     <FaEnvelope color='#4E7AC8' />
-                                    <p className="ml-2">{faculty.mail}</p>
+                                    <p className="ml-2">{pair.document.email}</p>
                                 </div>
                             </div>
                         </div>

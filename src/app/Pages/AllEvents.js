@@ -11,20 +11,18 @@ function AllEvents() {
   useEffect(() => {
     const fetchDataAndPreviews = async () => {
       try {
-        // Step 1: Fetch documents
+      
         const documentResponse = await db.listDocuments("6506cf5aa359dba589cb", "6506cf6a19897b111c76");
-
-        // Step 2: Fetch previews for each document
         const previewPromises = documentResponse.documents.map(async document => {
           const documentId = document["$id"];
           const preview = await storage.getFilePreview("6506cff041f958b67dca", documentId);
-          return { document, preview }; // Pair the document and its preview
+          return { document, preview }; 
         });
 
         const previews = await Promise.all(previewPromises);
         const validPreviews = previews.filter(pair => pair.preview !== null);
 
-        setDocuments(validPreviews); // Update state with valid previews
+        setDocuments(validPreviews); 
       } catch (error) {
         console.error('Error:', error);
       }

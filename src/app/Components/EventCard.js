@@ -1,7 +1,7 @@
 
 const EventCard = ({ title, description, date, imageUrl }) => {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg mx-4 my-4 relative cursor-pointer h-fit">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg mx-4 my-4 relative cursor-pointer h-[500px]">
       <div className="absolute top-0 left-0 bg-blue-500 text-white p-2">
         {date}
       </div>
