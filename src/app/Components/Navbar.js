@@ -6,11 +6,24 @@ const Navbar = () => {
 
     return (
         <div>
-            <div>
+            <div className="md:flex md:space-x-2 items-center justify-center">
                 <p className="flex items-center justify-center md:flex-row md:items-center md:space-x-2">
                     <span className="md:inline-block mr-2 font-semibold">Developed By:</span>
                     <a href="https://www.instagram.com/awais144506/" className="flex items-center text-[#4E7AC8] font-semibold">
                         Muhammad Awais <FaInstagram size={26} className="ml-1" />
+                    </a>
+
+                </p>
+                <p className="flex items-center justify-center md:flex-row md:items-center md:space-x-2">
+
+                    <a href="https://www.instagram.com/awais144506/" className="flex items-center text-[#4E7AC8] font-semibold">
+                        & Abdul Manaf
+                    </a>
+                </p>
+                <p className="flex items-center justify-center md:flex-row md:items-center md:space-x-2 mt-1 md:mt-0">
+                    <span className="md:inline-block mr-2 font-semibold">Designed By:</span>
+                    <a href="#" className="flex items-center text-[#dd4f4f] font-semibold">
+                        Eman Khadim
                     </a>
                 </p>
             </div>

@@ -198,20 +198,20 @@ function ComputerScience() {
                 <div className="text-center md:text-left mb-4">
                     <div className="flex flex-col md:flex-row items-center justify-center md:justify-start mb-2">
                         <img
-                            src="/Vc.jpg" // Replace with actual image path
+                            src="/HOD.jpg" // Replace with actual image path
                             alt="Head of Department"
-                            className="w-80 h-80 rounded-lg mb-4 md:mr-6 md:mb-0"
+                            className="w-60 h-80 rounded-lg mb-4 md:mr-6 md:mb-0"
                         />
                         <div className='text-left'>
-                            <h2 className="text-2xl font-bold ">Aqib Javed</h2>
+                            <h2 className="text-2xl font-bold ">Nida Syed</h2>
                             <p className='font-semibold text-xl mb-2'>Head of Department</p>
-                            <p className='text-justify'>Prof. Dr. Aqib Javed Amin has a prosperous academic and research career in Physics at University of Agriculture Faisalabad and Government College University Faisalabad spanning over three decades. Prof. Amin earned his PhD from Quid-e-Azam University Islamabad and a Postdoctoral Fellowship from University of California - USA.</p>
-                            <p className='mb-2'><span className='font-semibold text-left '>Qualification </span><br className="md:hidden" />Ph.D Data Science<br />University of Malaysia</p>
-                            <p className='mb-2'><span className='font-semibold text-left '>Specialization </span><br className="md:hidden" />Data Mining</p>
+                            <p className='text-justify'>Prof. Nida Syed has a prosperous academic and research career in Business Administration & Management at Comsats University Islamabad spanning over decade. </p>
+                            <p className='mb-2'><span className='font-semibold text-left '>Qualification </span><br className="md:hidden" />MS Business Administration & Management<br/>Comsats University Islamabad</p>
+                            <p className='mb-2'><span className='font-semibold text-left '>Specialization </span><br className="md:hidden" />Business Administration & Management</p>
 
                             <div className="flex items-center mb-2">
                                 <FaEnvelope color='#4E7AC8' />
-                                <p className="ml-2">aqib@gcufswl.com</p>
+                                <p className="ml-2">nida@gcufswl.com</p>
                             </div>
                         </div>
                     </div>
