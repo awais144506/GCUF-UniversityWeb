@@ -14,8 +14,8 @@ function VCMessage() {
         <img className="rounded-full h-32 w-32 sm:h-40 sm:w-40" src="/Vc.jpg" alt="VC" />
       </div>
       <div className="flex flex-col text-center">
-        <div className="font-bold text-xl mb-2 text-blue-500">Dr. Nasir Amin</div>
-        <div className="text-gray-700 text-lg font-semibold mb-2">Vice Chancellor</div>
+        <div className="font-bold text-xl mb-2 text-blue-500">Col Sayed Hassan Imam</div>
+        <div className="text-gray-700 text-lg font-semibold mb-2">Director GCUF</div>
         <div className="text-blue-900 text-lg text-justify">
           <p>
             Government College University Faisalabad is a dynamic seat of learning aspiring to provide highly stimulating and conducive academic environments for quality research, formal education and professional growth. In the recent years, the university has achieved phenomenal success in research contribution and in improving the quality of education which is reflected through the meteoric rise of the institution in HEC ranking from 59th to its 7th position,resulting in growing confidence of civil society and business community of the region.{'\n'}

@@ -55,6 +55,11 @@ function Departments() {
             image: "/Physics.jpg",
             description:"BS Phy (4 Years)",
         },
+        {
+            name:"English",
+            image:"/Physics.jpg",
+            description:"BS English (4 Years)"
+        }
     ];
 
     return (
